@@ -1,0 +1,589 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7C9DB8"
+    tools:context=".MainActivity">
+
+    <!-- CardView 1 -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abril_fatface"
+        android:text="View Available Flights"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            android:padding="16dp">
+
+            <!-- Airline Logo -->
+
+            <!-- Departure Airport -->
+
+            <!-- Arrival Airport -->
+            <TextView
+                android:id="@+id/departureAirport1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YQT"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <!-- Plane Icon -->
+            <TextView
+                android:id="@+id/arrivalAirport1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DEL"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <!-- Flight Duration -->
+
+            <ImageView
+                android:id="@+id/planeIcon1"
+                android:layout_width="69dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_plane"
+                app:layout_constraintBottom_toBottomOf="@id/departureAirport1"
+                app:layout_constraintEnd_toStartOf="@id/arrivalAirport1"
+                app:layout_constraintHorizontal_bias="0.486"
+                app:layout_constraintStart_toEndOf="@id/departureAirport1"
+                app:layout_constraintTop_toTopOf="@id/departureAirport1"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/flightDuration1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="8dp"
+                android:text="13h 40m"
+                app:layout_constraintEnd_toStartOf="@id/arrivalAirport1"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toEndOf="@id/departureAirport1"
+                app:layout_constraintTop_toBottomOf="@id/planeIcon1" />
+
+            <!-- Arrival Time -->
+            <TextView
+                android:id="@+id/departureTime1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="05:05 AM"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/departureAirport1"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <!-- View Detail Link -->
+
+            <TextView
+                android:id="@+id/cost1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:text="CA$ 1983"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalAirport1"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/arrivalTime1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="07:05 AM +"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalAirport1"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/viewDetail1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#7C9DB8"
+                android:text="Book"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalTime1"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/ai"
+                android:layout_width="123dp"
+                android:layout_height="31dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/planeIcon1"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/ai" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView 2 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/cardView1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            android:padding="16dp">
+
+            <!-- Airline Logo -->
+
+            <!-- Departure Airport -->
+
+            <!-- Arrival Airport -->
+
+            <!-- Plane Icon -->
+            <TextView
+                android:id="@+id/departureAirport2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YQT"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/arrivalAirport2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="80dp"
+                android:text="DEL"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/departureAirport2"/>
+
+            <ImageView
+                android:id="@+id/planeIcon2"
+                android:layout_width="69dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_plane"
+                app:layout_constraintBottom_toBottomOf="@id/departureAirport2"
+                app:layout_constraintEnd_toStartOf="@id/arrivalAirport2"
+                app:layout_constraintStart_toEndOf="@id/departureAirport2"
+                app:layout_constraintTop_toTopOf="@id/departureAirport2" />
+
+            <!-- Flight Duration -->
+
+            <TextView
+                android:id="@+id/flightDuration2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="4dp"
+                android:text="17h 45m"
+                app:layout_constraintEnd_toStartOf="@id/arrivalAirport2"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toEndOf="@id/departureAirport2"
+                app:layout_constraintTop_toBottomOf="@id/planeIcon2" />
+
+            <!-- Arrival Time -->
+            <TextView
+                android:id="@+id/departureTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="10:40 PM"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/departureAirport2"
+                app:layout_constraintVertical_bias="0.067" />
+
+            <TextView
+                android:id="@+id/cost2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="256dp"
+                android:text="CA$ 1529"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalAirport2" />
+
+            <TextView
+                android:id="@+id/arrivalTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="01:55 AM +"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalAirport2" />
+
+            <!-- View Detail Link -->
+
+            <Button
+                android:id="@+id/viewDetail2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#7C9DB8"
+                android:text="Book"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalTime2" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="122dp"
+                android:layout_height="41dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/planeIcon2"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/klm" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView 3 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/cardView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            android:padding="16dp">
+
+            <!-- Airline Logo -->
+
+            <!-- Departure Airport -->
+
+            <!-- Arrival Airport -->
+
+            <!-- Plane Icon -->
+
+            <!-- Flight Duration -->
+
+            <TextView
+                android:id="@+id/departureAirport3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YQT"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/arrivalAirport3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="84dp"
+                android:text="DEL"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/planeIcon3"
+                android:layout_width="69dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_plane"
+                app:layout_constraintBottom_toBottomOf="@id/departureAirport3"
+                app:layout_constraintEnd_toStartOf="@id/arrivalAirport3"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toEndOf="@id/departureAirport3"
+                app:layout_constraintTop_toTopOf="@id/departureAirport3"
+                app:layout_constraintVertical_bias="0.218" />
+
+            <TextView
+                android:id="@+id/flightDuration3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="8dp"
+                android:text="19h 15m"
+                app:layout_constraintEnd_toStartOf="@id/arrivalAirport3"
+                app:layout_constraintHorizontal_bias="0.465"
+                app:layout_constraintStart_toEndOf="@id/departureAirport3"
+                app:layout_constraintTop_toBottomOf="@id/planeIcon3" />
+
+            <TextView
+                android:id="@+id/departureTime3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="05:00 PM"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/departureAirport3" />
+
+            <!-- Arrival Time -->
+            <TextView
+                android:id="@+id/cost3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="256dp"
+                android:text="CA$ 1971"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalAirport3" />
+
+            <TextView
+                android:id="@+id/arrivalTime3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="09:45 PM +"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalAirport3" />
+
+            <!-- View Detail Link -->
+
+            <Button
+                android:id="@+id/viewDetail3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#7C9DB8"
+                android:text="Book"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalTime3" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="125dp"
+                android:layout_height="57dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/planeIcon3"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/ac" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CardView 4 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/cardView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            android:padding="16dp">
+
+            <!-- Airline Logo -->
+
+            <!-- Departure Airport -->
+
+            <!-- Arrival Airport -->
+
+            <TextView
+                android:id="@+id/departureAirport4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YQT"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <!-- Plane Icon -->
+            <TextView
+                android:id="@+id/arrivalAirport4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DEL"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/planeIcon4"
+                android:layout_width="69dp"
+                android:layout_height="49dp"
+                android:layout_marginHorizontal="8dp"
+                android:src="@drawable/ic_plane"
+                app:layout_constraintBottom_toBottomOf="@id/departureAirport4"
+                app:layout_constraintEnd_toStartOf="@id/arrivalAirport4"
+                app:layout_constraintStart_toEndOf="@id/departureAirport4"
+                app:layout_constraintTop_toTopOf="@id/departureAirport4" />
+
+            <!-- Flight Duration -->
+
+            <TextView
+                android:id="@+id/flightDuration4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="4dp"
+                android:text="20h 30m"
+                app:layout_constraintEnd_toStartOf="@id/arrivalAirport4"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toEndOf="@id/departureAirport4"
+                app:layout_constraintTop_toBottomOf="@id/planeIcon4" />
+
+            <TextView
+                android:id="@+id/departureTime4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="02:30 PM"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/departureAirport4" />
+
+            <!-- Arrival Time -->
+            <TextView
+                android:id="@+id/cost4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="256dp"
+                android:text="CA$ 2200"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalAirport4" />
+
+            <TextView
+                android:id="@+id/arrivalTime4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="08:20 PM +"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalAirport4" />
+
+            <!-- View Detail Link -->
+
+            <Button
+                android:id="@+id/viewDetail4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#7C9DB8"
+                android:text="Book"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalTime4" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="125dp"
+                android:layout_height="47dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/planeIcon4"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/emi" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
