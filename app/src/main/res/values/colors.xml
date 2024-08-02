@@ -10,6 +10,8 @@
     <!-- Background color when focused -->
     <color name="focused_background_color">#F5F5F5</color>
 
+    <color name="purple_500">#6200EE</color>
+
     <!-- Default border color -->
     <color name="border_color">#BCBCBC</color>
 
