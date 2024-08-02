@@ -36,7 +36,8 @@
             android:layout_marginTop="120dp"
             android:background="#363434"
             android:backgroundTint="#363434"
-            android:text="Book Now -->" />
+            android:text="Book Now -->"
+            android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
 
@@ -50,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:titleTextColor="@android:color/black" />
+        app:titleTextColor="@android:color/white" />
 
     <TextView
         android:id="@+id/featured"
@@ -72,6 +73,7 @@
         android:layout_height="34dp"
         android:fontFamily="@font/allan"
         android:text="List of Popular Cities"
+        android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,6 +117,7 @@
         android:fontFamily="@font/allan"
         android:text="Recommended Packages"
         android:textSize="34sp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.373"
@@ -159,6 +162,7 @@
         android:text="Niagara, Canada"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#000000"
         app:layout_constraintHorizontal_bias="0.638"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -201,6 +205,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/average"
         android:text="Paris, France"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.335"
@@ -229,6 +234,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/average"
         android:text="New York, USA"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.977"
@@ -243,6 +249,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/average"
         android:text="Delhi, India"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.082"
@@ -256,6 +263,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/average"
         android:text="Maldives"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.125"
@@ -269,6 +277,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/average"
         android:text="Disneyland"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -281,6 +290,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/average"
         android:text="Turkey"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.904"

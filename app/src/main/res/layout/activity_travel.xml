@@ -43,37 +43,29 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.063" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editfname"
-                android:layout_width="308dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="20dp"
-                android:ems="10"
-                android:inputType="text"
-                android:text="Enter First Name"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.2" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:hint="Enter First Name"
+                android:padding="12dp"
+                android:textColorHint="@color/textColorSecondary"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/textColorPrimary"
+                app:hintTextColor="@color/textColorSecondary" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editlname"
-                android:layout_width="308dp"
-                android:layout_height="52dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:ems="10"
-                android:inputType="text"
-                android:text="Enter Last Name"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.31" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:hint="Enter Last Name"
+                android:padding="12dp"
+                android:textColorHint="@color/textColorSecondary"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/textColorPrimary"
+                app:hintTextColor="@color/textColorSecondary" />
 
             <TextView
                 android:id="@+id/gender"
@@ -160,15 +152,17 @@
             </LinearLayout>
 
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextDate"
-                android:layout_width="305dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:ems="10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date of Travel"
                 android:inputType="date"
-                android:text="Enter Date of Travel" />
+                android:padding="12dp"
+                android:textColorHint="@color/textColorSecondary"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/textColorPrimary"
+                app:hintTextColor="@color/textColorSecondary" />
 
             <Button
                 android:id="@+id/book"
