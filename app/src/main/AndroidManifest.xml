@@ -48,6 +48,19 @@
             android:name=".FlightBookActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".SeatSelectionActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".FlightDetailsActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".BoardingPassActivity"
+            android:exported="true" />
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

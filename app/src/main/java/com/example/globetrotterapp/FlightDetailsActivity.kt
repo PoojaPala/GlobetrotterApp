@@ -24,7 +24,7 @@ class FlightDetailsActivity : AppCompatActivity() {
 
         // Set up confirm button click listener to navigate to BoardingPassActivity
         confirmButton.setOnClickListener {
-            val intent = Intent(this, BoardingPassActivity::class.java)
+            val intent = Intent(this, SeatSelectionActivity::class.java)
             startActivity(intent)
         }
     }
