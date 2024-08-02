@@ -1,6 +1,7 @@
 package com.example.globetrotterapp
 
-
+import android.widget.Toast
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -9,74 +10,154 @@ class SeatSelectionActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_seat_selection)
+        setContentView(R.layout.activity_seat_selection) // Replace with your actual XML layout name
 
         // Initialize buttons
-        val button4E: Button = findViewById(R.id.foure)
-        val button5C: Button = findViewById(R.id.fivec)
-        val button6C: Button = findViewById(R.id.sixc)
-        val button6B: Button = findViewById(R.id.sixb)
-        val button4A: Button = findViewById(R.id.foura)
-        val button5A: Button = findViewById(R.id.fivea)
-        val button6A: Button = findViewById(R.id.sixa)
-        val button4B: Button = findViewById(R.id.fourb)
-        val button5B: Button = findViewById(R.id.fiveb)
-        val button4C: Button = findViewById(R.id.fourc)
-        val button4F: Button = findViewById(R.id.fourf)
-        val button4D: Button = findViewById(R.id.fourd)
-        val button5D: Button = findViewById(R.id.fived)
-        val button6D: Button = findViewById(R.id.sixd)
-        val button6E: Button = findViewById(R.id.sixe)
-        val button6F: Button = findViewById(R.id.sixf)
-        val button5E: Button = findViewById(R.id.fivee)
-        val button5F: Button = findViewById(R.id.fivef)
-        val button1A: Button = findViewById(R.id.onea)
-        val button1K: Button = findViewById(R.id.onek)
-        val button2A: Button = findViewById(R.id.twoa)
-        val button3A: Button = findViewById(R.id.threeq)
-        val button2C: Button = findViewById(R.id.twoc)
-        val button3C: Button = findViewById(R.id.threec)
-        val button3F: Button = findViewById(R.id.threef)
-        val button2F: Button = findViewById(R.id.twof)
-        val button2D: Button = findViewById(R.id.twod)
-        val button3D: Button = findViewById(R.id.threed)
+        val button1A = findViewById<Button>(R.id.onea)
+        val button1K = findViewById<Button>(R.id.onek)
+        val button2A = findViewById<Button>(R.id.twoa)
+        val button2C = findViewById<Button>(R.id.twoc)
+        val button2D = findViewById<Button>(R.id.twod)
+        val button2F = findViewById<Button>(R.id.twof)
+        val button3C = findViewById<Button>(R.id.threec)
+        val button3D = findViewById<Button>(R.id.threed)
+        val button3F = findViewById<Button>(R.id.threef)
+        val button4A = findViewById<Button>(R.id.foura)
+        val button4B = findViewById<Button>(R.id.fourb)
+        val button4C = findViewById<Button>(R.id.fourc)
+        val button4D = findViewById<Button>(R.id.fourd)
+        val button4E = findViewById<Button>(R.id.foure)
+        val button4F = findViewById<Button>(R.id.fourf)
+        val button5A = findViewById<Button>(R.id.fivea)
+        val button5B = findViewById<Button>(R.id.fiveb)
+        val button5C = findViewById<Button>(R.id.fivec)
+        val button5D = findViewById<Button>(R.id.fived)
+        val button5E = findViewById<Button>(R.id.fivee)
+        val button5F = findViewById<Button>(R.id.fivef)
+        val button6A = findViewById<Button>(R.id.sixa)
+        val button6C = findViewById<Button>(R.id.sixc)
+        val button6D = findViewById<Button>(R.id.sixd)
+        val button6E = findViewById<Button>(R.id.sixe)
+        val button6F = findViewById<Button>(R.id.sixf)
+        val confirmButton = findViewById<Button>(R.id.book)
 
-        val buttonConfirm: Button = findViewById(R.id.book)
-
-        // Set click listeners for buttons
-        button4E.setOnClickListener { /* Handle button click */ }
-        button5C.setOnClickListener { /* Handle button click */ }
-        button6C.setOnClickListener { /* Handle button click */ }
-        button6B.setOnClickListener { /* Handle button click */ }
-        button4A.setOnClickListener { /* Handle button click */ }
-        button5A.setOnClickListener { /* Handle button click */ }
-        button6A.setOnClickListener { /* Handle button click */ }
-        button4B.setOnClickListener { /* Handle button click */ }
-        button5B.setOnClickListener { /* Handle button click */ }
-        button4C.setOnClickListener { /* Handle button click */ }
-        button4F.setOnClickListener { /* Handle button click */ }
-        button4D.setOnClickListener { /* Handle button click */ }
-        button5D.setOnClickListener { /* Handle button click */ }
-        button6D.setOnClickListener { /* Handle button click */ }
-        button6E.setOnClickListener { /* Handle button click */ }
-        button6F.setOnClickListener { /* Handle button click */ }
-        button5E.setOnClickListener { /* Handle button click */ }
-        button5F.setOnClickListener { /* Handle button click */ }
-        button1A.setOnClickListener { /* Handle button click */ }
-        button1K.setOnClickListener { /* Handle button click */ }
-        button2A.setOnClickListener { /* Handle button click */ }
-        button3A.setOnClickListener { /* Handle button click */ }
-        button2C.setOnClickListener { /* Handle button click */ }
-        button3C.setOnClickListener { /* Handle button click */ }
-        button3F.setOnClickListener { /* Handle button click */ }
-        button2F.setOnClickListener { /* Handle button click */ }
-        button2D.setOnClickListener { /* Handle button click */ }
-        button3D.setOnClickListener { /* Handle button click */ }
-
-        buttonConfirm.setOnClickListener {
-            // Handle confirm button click
-            // For example: navigate to another activity
-            // startActivity(Intent(this, ConfirmationActivity::class.java))
+        // Set up click listeners for the buttons
+        button1A.setOnClickListener {
+            showToast("This seat is reserved.Please select another seat")
         }
+
+        button1K.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button2A.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button2C.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button2D.setOnClickListener {
+            showToast("This seat is reserved.Please select another seat")
+        }
+
+        button2F.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+
+
+        button3C.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button3D.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button3F.setOnClickListener {
+            showToast("This seat is reserved.Please select another seat")
+        }
+
+        button4A.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button4B.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button4C.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button4D.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button4E.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button4F.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button5A.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button5B.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button5C.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button5D.setOnClickListener {
+            showToast("This seat is reserved.Please select another seat")
+        }
+
+        button5E.setOnClickListener {
+            showToast("This seat is reserved.Please select another seat")
+        }
+
+        button5F.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button6A.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button6C.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button6D.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button6E.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        button6F.setOnClickListener {
+            navigateToNextActivity()
+        }
+
+        confirmButton.setOnClickListener {
+            navigateToNextActivity()
+        }
+    }
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun navigateToNextActivity() {
+        val intent = Intent(this, BoardingPassActivity::class.java)
+        startActivity(intent)
     }
 }
