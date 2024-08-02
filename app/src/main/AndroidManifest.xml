@@ -12,15 +12,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GlobetrotterApp"
         tools:targetApi="31">
+
+        <!-- SplashScreenActivity as the main launcher activity -->
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- MainActivity definition -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <!-- SignInActivity definition -->
+        <activity
+            android:name=".SignInActivity"
+            android:exported="true" />
+
+        <!-- SignUpActivity definition -->
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="true" />
+
+        <!-- TravelActivity definition -->
+        <activity
+            android:name=".TravelActivity"
+            android:exported="true" />
+
+        <!-- FlightBookActivity definition -->
+        <activity
+            android:name=".FlightBookActivity"
+            android:exported="true" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
