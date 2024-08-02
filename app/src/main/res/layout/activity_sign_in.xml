@@ -53,34 +53,39 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.023" />
 
-            <EditText
-                android:id="@+id/editTextTextEmailAddress"
-                android:layout_width="281dp"
-                android:layout_height="54dp"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:text="Email"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Email"
+                android:padding="12dp"
+                android:textColorHint="@color/textColorSecondary"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/textColorPrimary"
+                app:hintTextColor="@color/textColorSecondary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.513"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.297"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintVertical_bias="0.287" />
 
-            <EditText
-                android:id="@+id/editTextText"
-                android:layout_width="290dp"
-                android:layout_height="48dp"
-                android:ems="10"
-                android:inputType="text"
-                android:text="Password"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Password"
+                android:padding="12dp"
+                android:textColorHint="@color/textColorSecondary"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/textColorPrimary"
+                app:hintTextColor="@color/textColorSecondary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.498" />
+                app:layout_constraintVertical_bias="0.433" />
 
             <Button
                 android:id="@+id/button"
