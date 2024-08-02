@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
+    <!-- Default background color -->
+    <color name="default_background_color">#FFFFFF</color>
+
+    <!-- Background color when pressed -->
+    <color name="pressed_background_color">#E0E0E0</color>
+
+    <!-- Background color when focused -->
+    <color name="focused_background_color">#F5F5F5</color>
+
+    <!-- Default border color -->
+    <color name="border_color">#BCBCBC</color>
+
+    <!-- Border color when pressed -->
+    <color name="border_color_pressed">#FF5722</color>
+
+    <!-- Border color when focused -->
+    <color name="border_color_focused">#FFC107</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
