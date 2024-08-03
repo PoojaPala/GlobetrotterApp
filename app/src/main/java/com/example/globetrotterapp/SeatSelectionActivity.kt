@@ -1,5 +1,6 @@
 package com.example.globetrotterapp
 
+
 import android.widget.Toast
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +8,8 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 class SeatSelectionActivity : AppCompatActivity() {
+
+    private var selectedSeat: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,121 +46,130 @@ class SeatSelectionActivity : AppCompatActivity() {
 
         // Set up click listeners for the buttons
         button1A.setOnClickListener {
-            showToast("This seat is reserved.Please select another seat")
+            showToast("This seat is reserved. Please select another seat")
         }
 
         button1K.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("1K")
         }
 
         button2A.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("2A")
         }
 
         button2C.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("2C")
         }
 
         button2D.setOnClickListener {
-            showToast("This seat is reserved.Please select another seat")
+            showToast("This seat is reserved. Please select another seat")
         }
 
         button2F.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("2F")
         }
 
-
-
         button3C.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("3C")
         }
 
         button3D.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("3D")
         }
 
         button3F.setOnClickListener {
-            showToast("This seat is reserved.Please select another seat")
+            showToast("This seat is reserved. Please select another seat")
         }
 
         button4A.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("4A")
         }
 
         button4B.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("4B")
         }
 
         button4C.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("4C")
         }
 
         button4D.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("4D")
         }
 
         button4E.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("4E")
         }
 
         button4F.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("4F")
         }
 
         button5A.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("5A")
         }
 
         button5B.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("5B")
         }
 
         button5C.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("5C")
         }
 
         button5D.setOnClickListener {
-            showToast("This seat is reserved.Please select another seat")
+            showToast("This seat is reserved. Please select another seat")
         }
 
         button5E.setOnClickListener {
-            showToast("This seat is reserved.Please select another seat")
+            showToast("This seat is reserved. Please select another seat")
         }
 
         button5F.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("5F")
         }
 
         button6A.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("6A")
         }
 
         button6C.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("6C")
         }
 
         button6D.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("6D")
         }
 
         button6E.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("6E")
         }
 
         button6F.setOnClickListener {
-            navigateToNextActivity()
+            selectSeat("6F")
         }
 
         confirmButton.setOnClickListener {
-            navigateToNextActivity()
+            if (selectedSeat != null) {
+                navigateToNextActivity(selectedSeat!!)
+            } else {
+                showToast("Please select a seat")
+            }
         }
     }
+
+    private fun selectSeat(seatNumber: String) {
+        selectedSeat = seatNumber
+        showToast("Selected seat: $seatNumber")
+    }
+
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun navigateToNextActivity() {
+    private fun navigateToNextActivity(seatNumber: String) {
         val intent = Intent(this, BoardingPassActivity::class.java)
+        intent.putExtra("SEAT_NUMBER", seatNumber)
         startActivity(intent)
     }
 }

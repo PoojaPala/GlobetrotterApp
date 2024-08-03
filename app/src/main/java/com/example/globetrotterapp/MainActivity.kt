@@ -5,90 +5,80 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.cardview.widget.CardView
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var bookButton: Button
+    private lateinit var disneyButton: ImageButton
+    private lateinit var maldivesButton: ImageButton
+    private lateinit var turkeyButton: ImageButton
+    private lateinit var parisButton: ImageButton
+    private lateinit var niagaraButton: ImageButton
+    private lateinit var nyButton: ImageButton
+    private lateinit var indiaButton: ImageButton
+    private lateinit var featuredText: TextView
+    private lateinit var dessertListText: TextView
+    private lateinit var recommendedPackagesText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Set up the Toolbar
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        // Initialize views
+        bookButton = findViewById(R.id.book)
+        disneyButton = findViewById(R.id.disney)
+        maldivesButton = findViewById(R.id.maldives)
+        turkeyButton = findViewById(R.id.turkey)
+        parisButton = findViewById(R.id.paris)
+        niagaraButton = findViewById(R.id.niagara)
+        nyButton = findViewById(R.id.ny)
+        indiaButton = findViewById(R.id.india)
+        featuredText = findViewById(R.id.featured)
+        dessertListText = findViewById(R.id.dessert_list)
+        recommendedPackagesText = findViewById(R.id.textView4)
 
-        // CardView and Button for booking
-        val cardView = findViewById<CardView>(R.id.cardView)
-        val bookButton = findViewById<Button>(R.id.book)
+        // Set up click listeners
         bookButton.setOnClickListener {
-            // Navigate to TravelActivity when "Book Now" is clicked
+            // Handle book button click
             val intent = Intent(this, TravelActivity::class.java)
             startActivity(intent)
         }
 
-        // ImageButtons and TextViews for destinations
-        val parisButton = findViewById<ImageButton>(R.id.paris)
-        val niagaraButton = findViewById<ImageButton>(R.id.niagara)
-        val nyButton = findViewById<ImageButton>(R.id.ny)
-        val indiaButton = findViewById<ImageButton>(R.id.india)
-        val disneyButton = findViewById<ImageView>(R.id.disney)
-        val maldivesButton = findViewById<ImageView>(R.id.maldives)
-        val turkeyButton = findViewById<ImageView>(R.id.turkey)
-
-        parisButton.setOnClickListener {
-            // Navigate to FlightBookActivity with the destination set to Paris
-            val intent = Intent(this, FlightBookActivity::class.java)
-            intent.putExtra("DESTINATION", "Paris, France")
-            startActivity(intent)
-        }
-
-        niagaraButton.setOnClickListener {
-            // Navigate to FlightBookActivity with the destination set to Niagara
-            val intent = Intent(this, FlightBookActivity::class.java)
-            intent.putExtra("DESTINATION", "Niagara, Canada")
-            startActivity(intent)
-        }
-
-        nyButton.setOnClickListener {
-            // Navigate to FlightBookActivity with the destination set to New York
-            val intent = Intent(this, FlightBookActivity::class.java)
-            intent.putExtra("DESTINATION", "New York, USA")
-            startActivity(intent)
-        }
-
-        indiaButton.setOnClickListener {
-            // Navigate to FlightBookActivity with the destination set to Delhi
-            val intent = Intent(this, FlightBookActivity::class.java)
-            intent.putExtra("DESTINATION", "Delhi, India")
-            startActivity(intent)
-        }
-
         disneyButton.setOnClickListener {
-            // Navigate to FlightBookActivity with the destination set to Disneyland
-            val intent = Intent(this, FlightBookActivity::class.java)
-            intent.putExtra("DESTINATION", "Disneyland")
-            startActivity(intent)
+            // Handle Disney button click
+            // Add functionality or show a toast message
         }
 
         maldivesButton.setOnClickListener {
-            // Navigate to FlightBookActivity with the destination set to Maldives
-            val intent = Intent(this, FlightBookActivity::class.java)
-            intent.putExtra("DESTINATION", "Maldives")
-            startActivity(intent)
+            // Handle Maldives button click
+            // Add functionality or show a toast message
         }
 
         turkeyButton.setOnClickListener {
-            // Navigate to FlightBookActivity with the destination set to Turkey
-            val intent = Intent(this, FlightBookActivity::class.java)
-            intent.putExtra("DESTINATION", "Turkey")
-            startActivity(intent)
+            // Handle Turkey button click
+            // Add functionality or show a toast message
+        }
 
+        parisButton.setOnClickListener {
+            // Handle Paris button click
+            // Add functionality or show a toast message
+        }
 
+        niagaraButton.setOnClickListener {
+            // Handle Niagara button click
+            // Add functionality or show a toast message
+        }
 
+        nyButton.setOnClickListener {
+            // Handle New York button click
+            // Add functionality or show a toast message
+        }
+
+        indiaButton.setOnClickListener {
+            // Handle India button click
+            // Add functionality or show a toast message
         }
     }
 }
-
