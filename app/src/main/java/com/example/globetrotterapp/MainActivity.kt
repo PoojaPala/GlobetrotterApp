@@ -28,16 +28,16 @@ class MainActivity : AppCompatActivity() {
 
         // Initialize views
         bookButton = findViewById(R.id.book)
-        disneyButton = findViewById(R.id.disney)
-        maldivesButton = findViewById(R.id.maldives)
-        turkeyButton = findViewById(R.id.turkey)
-        parisButton = findViewById(R.id.paris)
-        niagaraButton = findViewById(R.id.niagara)
-        nyButton = findViewById(R.id.ny)
-        indiaButton = findViewById(R.id.india)
-        featuredText = findViewById(R.id.featured)
-        dessertListText = findViewById(R.id.dessert_list)
-        recommendedPackagesText = findViewById(R.id.textView4)
+//        disneyButton = findViewById(R.id.disney)
+//        maldivesButton = findViewById(R.id.maldives)
+//        turkeyButton = findViewById(R.id.turkey)
+//        parisButton = findViewById(R.id.paris)
+//        niagaraButton = findViewById(R.id.niagara)
+//        nyButton = findViewById(R.id.ny)
+//        indiaButton = findViewById(R.id.india)
+//        featuredText = findViewById(R.id.featured)
+//        dessertListText = findViewById(R.id.dessert_list)
+//        recommendedPackagesText = findViewById(R.id.textView4)
 
         // Set up click listeners
         bookButton.setOnClickListener {
@@ -46,39 +46,39 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        disneyButton.setOnClickListener {
-            // Handle Disney button click
-            // Add functionality or show a toast message
-        }
-
-        maldivesButton.setOnClickListener {
-            // Handle Maldives button click
-            // Add functionality or show a toast message
-        }
-
-        turkeyButton.setOnClickListener {
-            // Handle Turkey button click
-            // Add functionality or show a toast message
-        }
-
-        parisButton.setOnClickListener {
-            // Handle Paris button click
-            // Add functionality or show a toast message
-        }
-
-        niagaraButton.setOnClickListener {
-            // Handle Niagara button click
-            // Add functionality or show a toast message
-        }
-
-        nyButton.setOnClickListener {
-            // Handle New York button click
-            // Add functionality or show a toast message
-        }
-
-        indiaButton.setOnClickListener {
-            // Handle India button click
-            // Add functionality or show a toast message
-        }
+//        disneyButton.setOnClickListener {
+//            // Handle Disney button click
+//            // Add functionality or show a toast message
+//        }
+//
+//        maldivesButton.setOnClickListener {
+//            // Handle Maldives button click
+//            // Add functionality or show a toast message
+//        }
+//
+//        turkeyButton.setOnClickListener {
+//            // Handle Turkey button click
+//            // Add functionality or show a toast message
+//        }
+//
+//        parisButton.setOnClickListener {
+//            // Handle Paris button click
+//            // Add functionality or show a toast message
+//        }
+//
+//        niagaraButton.setOnClickListener {
+//            // Handle Niagara button click
+//            // Add functionality or show a toast message
+//        }
+//
+//        nyButton.setOnClickListener {
+//            // Handle New York button click
+//            // Add functionality or show a toast message
+//        }
+//
+//        indiaButton.setOnClickListener {
+//            // Handle India button click
+//            // Add functionality or show a toast message
+//        }
     }
 }

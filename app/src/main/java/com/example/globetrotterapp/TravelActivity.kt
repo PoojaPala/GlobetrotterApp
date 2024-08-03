@@ -29,8 +29,8 @@ class TravelActivity : AppCompatActivity() {
         firstName = findViewById(R.id.editfname)
         lastName = findViewById(R.id.editlname)
         genderGroup = findViewById(R.id.radioGroup)
-        fromSpinner = findViewById(R.id.FromSpinner)
-        toSpinner = findViewById(R.id.ToSpinner)
+        //fromSpinner = findViewById(R.id.FromSpinner)
+        //toSpinner = findViewById(R.id.ToSpinner)
         dateOfTravel = findViewById(R.id.editTextDate)
         continueButton = findViewById(R.id.book)
 
@@ -50,6 +50,7 @@ class TravelActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
 
     private fun showDatePickerDialog() {
         val calendar = Calendar.getInstance()
