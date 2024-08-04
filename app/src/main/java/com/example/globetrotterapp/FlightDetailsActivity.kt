@@ -1,11 +1,11 @@
 package com.example.globetrotterapp
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
 
 class FlightDetailsActivity : AppCompatActivity() {
 
@@ -13,6 +13,7 @@ class FlightDetailsActivity : AppCompatActivity() {
     private lateinit var arrivalAirport: TextView
     private lateinit var editButton: Button
     private lateinit var confirmButton: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +24,9 @@ class FlightDetailsActivity : AppCompatActivity() {
         editButton = findViewById(R.id.edit)
         confirmButton = findViewById(R.id.book3)
 
-        val fromLocation = intent.getStringExtra("EXTRA_FROM_LOCATION") ?: "YQT"
-        val toLocation = intent.getStringExtra("EXTRA_TO_LOCATION") ?: "DEL"
+        val fromLocation = intent.getStringExtra("from") ?: ""
+       val toLocation = intent.getStringExtra("to") ?: ""
+        val firstName = intent.getStringExtra("firstName")?:""
 
         departureAirport.text = fromLocation
         arrivalAirport.text = toLocation
@@ -35,7 +37,11 @@ class FlightDetailsActivity : AppCompatActivity() {
         }
 
         confirmButton.setOnClickListener {
-            val intent = Intent(this, SeatSelectionActivity::class.java)
+            val intent = Intent(this, SeatSelectionActivity::class.java).apply {
+                putExtra("from", fromLocation)
+                putExtra("to", toLocation)
+                putExtra("firstName", firstName)
+            }
             startActivity(intent)
         }
     }

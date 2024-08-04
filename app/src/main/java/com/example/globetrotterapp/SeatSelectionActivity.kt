@@ -1,15 +1,21 @@
 package com.example.globetrotterapp
 
-
+import android.widget.Spinner
 import android.widget.Toast
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
 
 class SeatSelectionActivity : AppCompatActivity() {
 
     private var selectedSeat: String? = null
+    private lateinit var firstName: String
+    private lateinit var fromLocation: String
+    private lateinit var toLocation: String
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +28,7 @@ class SeatSelectionActivity : AppCompatActivity() {
         val button2C = findViewById<Button>(R.id.twoc)
         val button2D = findViewById<Button>(R.id.twod)
         val button2F = findViewById<Button>(R.id.twof)
+        val button3A = findViewById<Button>(R.id.threeq)
         val button3C = findViewById<Button>(R.id.threec)
         val button3D = findViewById<Button>(R.id.threed)
         val button3F = findViewById<Button>(R.id.threef)
@@ -38,11 +45,16 @@ class SeatSelectionActivity : AppCompatActivity() {
         val button5E = findViewById<Button>(R.id.fivee)
         val button5F = findViewById<Button>(R.id.fivef)
         val button6A = findViewById<Button>(R.id.sixa)
+        val button6B = findViewById<Button>(R.id.sixb)
         val button6C = findViewById<Button>(R.id.sixc)
         val button6D = findViewById<Button>(R.id.sixd)
         val button6E = findViewById<Button>(R.id.sixe)
         val button6F = findViewById<Button>(R.id.sixf)
         val confirmButton = findViewById<Button>(R.id.book)
+
+         fromLocation = intent.getStringExtra("from")?:""
+         toLocation = intent.getStringExtra("to")?:""
+         firstName = intent.getStringExtra("firstName")?:""
 
         // Set up click listeners for the buttons
         button1A.setOnClickListener {
@@ -69,6 +81,9 @@ class SeatSelectionActivity : AppCompatActivity() {
             selectSeat("2F")
         }
 
+        button3A.setOnClickListener {
+            selectSeat("3A")
+        }
         button3C.setOnClickListener {
             selectSeat("3C")
         }
@@ -132,6 +147,9 @@ class SeatSelectionActivity : AppCompatActivity() {
         button6A.setOnClickListener {
             selectSeat("6A")
         }
+        button6B.setOnClickListener {
+            selectSeat("6B")
+        }
 
         button6C.setOnClickListener {
             selectSeat("6C")
@@ -151,7 +169,7 @@ class SeatSelectionActivity : AppCompatActivity() {
 
         confirmButton.setOnClickListener {
             if (selectedSeat != null) {
-                navigateToNextActivity(selectedSeat!!)
+                navigateToNextActivity(selectedSeat.toString())
             } else {
                 showToast("Please select a seat")
             }
@@ -167,9 +185,15 @@ class SeatSelectionActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun navigateToNextActivity(seatNumber: String) {
-        val intent = Intent(this, BoardingPassActivity::class.java)
-        intent.putExtra("SEAT_NUMBER", seatNumber)
-        startActivity(intent)
+     fun navigateToNextActivity(seatNumber: String) {
+
+        val intent = Intent(this, BoardingPassActivity::class.java).apply {
+            putExtra("from", fromLocation)
+            putExtra("to", toLocation)
+            putExtra("firstName", firstName)
+            putExtra("seatNumber",seatNumber)
+            }
+
+            startActivity(intent)
     }
 }

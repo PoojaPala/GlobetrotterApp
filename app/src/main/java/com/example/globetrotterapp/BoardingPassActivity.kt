@@ -2,10 +2,12 @@ package com.example.globetrotterapp
 
 
 import android.os.Bundle
+import android.widget.Spinner
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
 
 class BoardingPassActivity : AppCompatActivity() {
 
@@ -13,12 +15,10 @@ class BoardingPassActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_boarding_pass)
 
-        // Retrieve seat number from Intent
-        val seatNumber = intent.getStringExtra("SEAT_NUMBER")
-        val passengerName = "John Doe" // Retrieve this from wherever it was saved
-        val flightFrom = "YQT" // Retrieve this from previous activity
-        val flightTo = "DEL" // Retrieve this from previous activity
-        val gateNumber = "A6" // Retrieve this from previous activity
+
+        val seatNumber = intent.getStringExtra("seatNumber")?:""
+        val passengerName = intent.getStringExtra("firstName")?:"" // Retrieve this from wherever it was saved
+        val gateNumber = "A6"
 
         // Initialize TextViews
         val seatNumberTextView = findViewById<TextView>(R.id.seatnumber)
@@ -30,8 +30,8 @@ class BoardingPassActivity : AppCompatActivity() {
         // Set values
         seatNumberTextView.text = seatNumber
         passengerNameTextView.text = passengerName
-        flightFromTextView.text = flightFrom
-        flightToTextView.text = flightTo
+        flightFromTextView.text = intent.getStringExtra("from")?:""
+        flightToTextView.text = intent.getStringExtra("to")?:""
         gateNumberTextView.text = gateNumber
 
         // Set up click listener for the download button

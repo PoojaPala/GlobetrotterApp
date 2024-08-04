@@ -28,12 +28,10 @@ class SignInActivity : AppCompatActivity() {
 
             if (validateInputs(email, password)) {
                 // Proceed with sign-in logic
-                // For example, authenticate user credentials with the database or Firebase
                 Toast.makeText(this, "Sign-In Successful", Toast.LENGTH_SHORT).show()
                 // Navigation to MainActivity with flags to clear previous activities
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-
             }
         }
     }

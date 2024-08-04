@@ -1,6 +1,6 @@
 package com.example.globetrotterapp
 
-
+import android.util.Log
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,7 @@ import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
+import android.widget.ArrayAdapter
 
 class TravelActivity : AppCompatActivity() {
 
@@ -29,10 +30,33 @@ class TravelActivity : AppCompatActivity() {
         firstName = findViewById(R.id.editfname)
         lastName = findViewById(R.id.editlname)
         genderGroup = findViewById(R.id.radioGroup)
-        //fromSpinner = findViewById(R.id.FromSpinner)
-        //toSpinner = findViewById(R.id.ToSpinner)
+        fromSpinner = findViewById(R.id.FromSpinner)
+        toSpinner = findViewById(R.id.ToSpinner)
         dateOfTravel = findViewById(R.id.editTextDate)
         continueButton = findViewById(R.id.book)
+
+//        // Initialize the arrays for spinners
+//        val fromLocations = resources.getStringArray(R.array.from_locations)
+//        val toLocations = resources.getStringArray(R.array.to_locations)
+
+//        Log.d("from", fromLocations.toString())
+//        Log.d("from", toLocations.toString())
+
+        val fromLocations = arrayOf("India","Canada","USA","Europe")
+        val toLocations = arrayOf("India","Canada","USA","Europe")
+        // Create ArrayAdapter using the string arrays and a default spinner layout
+        val fromAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, fromLocations)
+        val toAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, toLocations)
+
+
+        // Specify the layout to use when the list of choices appears
+        fromAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        toAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        // Apply the adapters to the spinners
+        fromSpinner.adapter = fromAdapter
+        toSpinner.adapter = toAdapter
+
 
         dateOfTravel.setOnClickListener {
             showDatePickerDialog()
