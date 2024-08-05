@@ -76,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Enter Password"
                 android:padding="12dp"
+                android:inputType="textWebPassword"
                 android:textColorHint="@color/textColorSecondary"
                 app:boxBackgroundMode="outline"
                 app:boxStrokeColor="@color/textColorPrimary"
