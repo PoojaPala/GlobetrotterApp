@@ -272,12 +272,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
-                android:layout_marginEnd="256dp"
                 android:text="CA$ 1529"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/arrivalAirport2" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalAirport2"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/arrivalTime2"
@@ -407,17 +410,21 @@
                 app:layout_constraintTop_toBottomOf="@id/departureAirport3" />
 
             <!-- Arrival Time -->
+
             <TextView
                 android:id="@+id/cost3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
-                android:layout_marginEnd="256dp"
                 android:text="CA$ 1971"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/arrivalAirport3" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalAirport3"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/arrivalTime3"
@@ -464,6 +471,7 @@
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -544,17 +552,21 @@
                 app:layout_constraintTop_toBottomOf="@id/departureAirport4" />
 
             <!-- Arrival Time -->
+
             <TextView
                 android:id="@+id/cost4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
-                android:layout_marginEnd="256dp"
                 android:text="CA$ 2200"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/arrivalAirport4" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/arrivalAirport4"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/arrivalTime4"
