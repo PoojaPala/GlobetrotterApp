@@ -32,7 +32,7 @@ class FlightDetailsActivity : AppCompatActivity() {
         arrivalAirport.text = toLocation
 
         editButton.setOnClickListener {
-            val intent = Intent(this, FlightBookActivity::class.java)
+            val intent = Intent(this, TravelActivity::class.java)
             startActivity(intent)
         }
 
