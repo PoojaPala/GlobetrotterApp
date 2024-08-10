@@ -33,49 +33,62 @@
         app:layout_constraintVertical_bias="1.0"
         app:shapeAppearanceOverlay="@style/RoundedTopCorners">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="398dp"
-            android:layout_height="477dp"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="207dp"
-                android:layout_height="62dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/abril_fatface"
                 android:text="Sign Up"
+                android:layout_margin="10dp"
                 android:textColor="#000000"
                 android:textSize="44sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.065"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.023" />
+                android:gravity="center"/>
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Email"
-                android:padding="12dp"
+                android:layout_margin="12dp"
+                android:textColorHint="@color/textColorSecondary"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/textColorPrimary"
+                app:hintTextColor="@color/textColorSecondary"
+                />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First Name"
+                android:layout_margin="12dp"
                 android:textColorHint="@color/textColorSecondary"
                 app:boxBackgroundMode="outline"
                 app:boxStrokeColor="@color/textColorPrimary"
                 app:hintTextColor="@color/textColorSecondary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.433" />
+                app:layout_constraintVertical_bias="0.269" />
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name"
+                android:id="@+id/lastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Passenger Name"
-                android:padding="12dp"
+                android:hint="Last Name"
+                android:layout_margin="12dp"
                 android:textColorHint="@color/textColorSecondary"
                 app:boxBackgroundMode="outline"
                 app:boxStrokeColor="@color/textColorPrimary"
@@ -92,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Password"
-                android:padding="12dp"
+                android:layout_margin="12dp"
                 android:inputType="textWebPassword"
                 android:textColorHint="@color/textColorSecondary"
                 app:boxBackgroundMode="outline"
@@ -107,20 +120,31 @@
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="208dp"
-                android:layout_height="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:backgroundTint="#7C9DB8"
                 android:text="Sign Up"
+                android:padding="10dp"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.899" />
+            <TextView
+                android:id="@+id/signInText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abril_fatface"
+                android:text="Already User? Sign In"
+                android:layout_margin="10dp"
+                android:textColor="@color/blue"
+                android:gravity="center"/>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
     </com.google.android.material.card.MaterialCardView>
 
     <ImageView

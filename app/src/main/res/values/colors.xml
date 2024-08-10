@@ -11,6 +11,7 @@
     <color name="focused_background_color">#F5F5F5</color>
 
     <color name="purple_500">#6200EE</color>
+    <color name="blue">#0000FF</color>
 
     <!-- Default border color -->
     <color name="border_color">#BCBCBC</color>
