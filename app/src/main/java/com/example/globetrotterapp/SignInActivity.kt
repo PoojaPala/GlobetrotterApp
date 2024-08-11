@@ -45,6 +45,11 @@ class SignInActivity : AppCompatActivity() {
         // below line is used to get reference for our database.
         databaseReference = firebaseDatabase.getReference().child("UserData")
 
+        (findViewById<TextView>(R.id.forgot_pass)!!).setOnClickListener{
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
         signUpText.setOnClickListener{
             val intent = Intent(this, SignUpActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

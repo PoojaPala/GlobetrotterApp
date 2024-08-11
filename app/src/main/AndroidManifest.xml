@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -15,54 +15,43 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GlobetrotterApp"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
         <!-- SplashScreenActivity as the main launcher activity -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- MainActivity definition -->
+        </activity> <!-- MainActivity definition -->
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
-
-        <!-- SignInActivity definition -->
+            android:exported="true" /> <!-- SignInActivity definition -->
         <activity
             android:name=".SignInActivity"
-            android:exported="true" />
-
-        <!-- SignUpActivity definition -->
+            android:exported="true" /> <!-- SignUpActivity definition -->
         <activity
             android:name=".SignUpActivity"
-            android:exported="true" />
-
-        <!-- TravelActivity definition -->
+            android:exported="true" /> <!-- TravelActivity definition -->
         <activity
             android:name=".TravelActivity"
-            android:exported="true" />
-
-        <!-- FlightBookActivity definition -->
+            android:exported="true" /> <!-- FlightBookActivity definition -->
         <activity
             android:name=".FlightBookActivity"
             android:exported="true" />
-
         <activity
             android:name=".SeatSelectionActivity"
             android:exported="true" />
-
         <activity
             android:name=".FlightDetailsActivity"
             android:exported="true" />
-
         <activity
             android:name=".BoardingPassActivity"
             android:exported="true" />
-
 
         <meta-data
             android:name="preloaded_fonts"
