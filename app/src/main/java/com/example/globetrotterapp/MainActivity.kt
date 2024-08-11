@@ -39,6 +39,12 @@ class MainActivity : AppCompatActivity() {
 //        nyButton = findViewById(R.id.ny)
 //        indiaButton = findViewById(R.id.india)
           welcomeBanner= findViewById(R.id.welcome)
+        findViewById<Button>(R.id.MyBooking).setOnClickListener{
+            var intent = Intent(this, BookingDetailsList::class.java)
+            intent.putExtra("email",getIntent().getStringExtra("email"))
+            intent.putExtra("name", getIntent().getStringExtra("name"))
+            startActivity(intent)
+        }
 
 //        dessertListText = findViewById(R.id.dessert_list)
 //        recommendedPackagesText = findViewById(R.id.textView4)

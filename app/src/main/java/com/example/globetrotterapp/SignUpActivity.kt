@@ -93,6 +93,11 @@ class SignUpActivity : AppCompatActivity() {
                             // Example navigation to another activity
                             val intent = Intent(baseContext, MainActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            intent.putExtra("email",email)
+                            intent.putExtra("name",
+                                firstName + " " +
+                                        lastNmae
+                            )
                             startActivity(intent)
                         }
 

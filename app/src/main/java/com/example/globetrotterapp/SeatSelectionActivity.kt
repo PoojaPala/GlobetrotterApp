@@ -194,10 +194,8 @@ class SeatSelectionActivity : AppCompatActivity() {
          var databaseReference = FirebaseDatabase.getInstance().getReference().child("FlightsBooking")
          val booking = FlightsBooking(firstName,
              intent.getStringExtra("email").toString(), fromLocation, toLocation,seatNumber)
-         databaseReference.addValueEventListener(object : ValueEventListener {
+         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
              override fun onDataChange(@NonNull snapshot: DataSnapshot) {
-
-                 Toast.makeText(baseContext, "Flight Booked Successfully", Toast.LENGTH_SHORT).show()
                  // Example navigation to another activity
                  val intent = Intent(baseContext, BoardingPassActivity::class.java).apply {
                      putExtra("from", fromLocation)
@@ -210,6 +208,7 @@ class SeatSelectionActivity : AppCompatActivity() {
                  intent.flags =
                      Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                  startActivity(intent)
+                 finish()
              }
 
              override fun onCancelled(@NonNull error: DatabaseError) {

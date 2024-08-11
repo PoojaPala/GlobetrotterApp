@@ -49,6 +49,7 @@ class BoardingPassActivity : AppCompatActivity() {
             intent.putExtra("email",getIntent().getStringExtra("email"))
             intent.putExtra("name", getIntent().getStringExtra("name"))
             startActivity(intent)
+            finish()
         }
     }
 
