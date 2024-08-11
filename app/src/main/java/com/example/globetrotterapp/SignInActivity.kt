@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.Query
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.values
 
 class SignInActivity : AppCompatActivity() {
 
@@ -67,18 +68,25 @@ class SignInActivity : AppCompatActivity() {
                 val eventListener: ValueEventListener = object : ValueEventListener {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
                         if (dataSnapshot.exists()) {
-                           if(password == dataSnapshot.child("password").getValue(String::class.java)){
-                               // Proceed with sign-in logic
-                               Toast.makeText(baseContext, "Sign-In Successful", Toast.LENGTH_SHORT).show()
-                               // Navigation to MainActivity with flags to clear previous activities
-                               val intent = Intent(baseContext, MainActivity::class.java)
-                               intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                               startActivity(intent)
-                           }else{
-                               passwordEditText.error = "Password is Invalid. Please try again"
-                               passwordEditText.requestFocus()
-                           }
-
+                            for (userSnapshot in dataSnapshot.children) {
+                                if (password == userSnapshot.child("password").value)
+                                {
+                                    // Proceed with sign-in logic
+                                    Toast.makeText(
+                                        baseContext,
+                                        "Sign-In Successful",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    // Navigation to MainActivity with flags to clear previous activities
+                                    val intent = Intent(baseContext, MainActivity::class.java)
+                                    intent.flags =
+                                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                    startActivity(intent)
+                                } else {
+                                    passwordEditText.error = "Password is Invalid. Please try again"
+                                    passwordEditText.requestFocus()
+                                }
+                            }
                         }
                         else{
                             emailEditText.error = "Email Invalid try Sign Up"
