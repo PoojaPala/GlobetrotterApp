@@ -81,6 +81,11 @@ class SignInActivity : AppCompatActivity() {
                                     val intent = Intent(baseContext, MainActivity::class.java)
                                     intent.flags =
                                         Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                    intent.putExtra("email",email)
+                                    intent.putExtra("name",
+                                        userSnapshot.child("firstName").value as String + " " +
+                                                userSnapshot.child("lastName").value as String
+                                    )
                                     startActivity(intent)
                                 } else {
                                     passwordEditText.error = "Password is Invalid. Please try again"

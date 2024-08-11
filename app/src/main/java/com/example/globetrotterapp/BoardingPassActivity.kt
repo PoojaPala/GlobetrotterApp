@@ -1,6 +1,7 @@
 package com.example.globetrotterapp
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Spinner
 import android.widget.Button
@@ -39,6 +40,26 @@ class BoardingPassActivity : AppCompatActivity() {
         downloadButton.setOnClickListener {
             showToast("Your boarding pass is downloaded")
         }
+
+        val mainButton = findViewById<Button>(R.id.BookingPage)
+        mainButton.setOnClickListener {
+            val intent = Intent(baseContext, MainActivity::class.java)
+            intent.flags =
+                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent.putExtra("email",getIntent().getStringExtra("email"))
+            intent.putExtra("name", getIntent().getStringExtra("name"))
+            startActivity(intent)
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(baseContext, MainActivity::class.java)
+        intent.flags =
+            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent.putExtra("email",getIntent().getStringExtra("email"))
+        intent.putExtra("name", getIntent().getStringExtra("name"))
+        startActivity(intent)
     }
 
     private fun showToast(message: String) {

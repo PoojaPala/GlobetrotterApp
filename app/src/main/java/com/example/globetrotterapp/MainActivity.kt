@@ -1,6 +1,7 @@
 package com.example.globetrotterapp
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -18,16 +19,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var niagaraButton: ImageButton
     private lateinit var nyButton: ImageButton
     private lateinit var indiaButton: ImageButton
-    private lateinit var featuredText: TextView
+    private lateinit var welcomeBanner: TextView
     private lateinit var dessertListText: TextView
     private lateinit var recommendedPackagesText: TextView
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // Initialize views
         bookButton = findViewById(R.id.book)
+
 //        disneyButton = findViewById(R.id.disney)
 //        maldivesButton = findViewById(R.id.maldives)
 //        turkeyButton = findViewById(R.id.turkey)
@@ -35,14 +38,18 @@ class MainActivity : AppCompatActivity() {
 //        niagaraButton = findViewById(R.id.niagara)
 //        nyButton = findViewById(R.id.ny)
 //        indiaButton = findViewById(R.id.india)
-//        featuredText = findViewById(R.id.featured)
+          welcomeBanner= findViewById(R.id.welcome)
+
 //        dessertListText = findViewById(R.id.dessert_list)
 //        recommendedPackagesText = findViewById(R.id.textView4)
 
+        welcomeBanner.text = "Welcome "+ intent.getStringExtra("name")
         // Set up click listeners
         bookButton.setOnClickListener {
             // Handle book button click
             val intent = Intent(this, TravelActivity::class.java)
+            intent.putExtra("email",getIntent().getStringExtra("email"))
+            intent.putExtra("name", getIntent().getStringExtra("name"))
             startActivity(intent)
         }
 
