@@ -70,6 +70,9 @@ class TravelActivity : AppCompatActivity() {
                 putExtra("from", fromSpinner.selectedItem.toString())
                 putExtra("to", toSpinner.selectedItem.toString())
                 putExtra("dateOfTravel", dateOfTravel.text.toString())
+                putExtra("email", intent.getStringExtra("email"))
+                putExtra("name", intent.getStringExtra("name"))
+
             }
             startActivity(intent)
         }

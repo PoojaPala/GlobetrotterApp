@@ -14,7 +14,7 @@ class SplashScreenActivity : AppCompatActivity() {
         // Delay to show splash screen and then navigate to SignUpActivity
         val splashScreenDuration = 2000L // 2 seconds
         android.os.Handler().postDelayed({
-            val intent = Intent(this, SignUpActivity::class.java)
+            val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
             finish() // Close SplashScreenActivity
         }, splashScreenDuration)

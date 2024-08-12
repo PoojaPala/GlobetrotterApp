@@ -122,7 +122,8 @@ class FlightBookActivity : AppCompatActivity() {
                 putExtra("from", fromLocation)
                 putExtra("to", toLocation)
                 putExtra("firstName", firstName)
-
+                putExtra("email", intent.getStringExtra("email"))
+                putExtra("name", intent.getStringExtra("name"))
 
         }
             startActivity(intent)
@@ -141,6 +142,9 @@ class FlightBookActivity : AppCompatActivity() {
                 putExtra("from", fromLocation)
                 putExtra("to", toLocation)
                 putExtra("firstName", firstNamea)
+                putExtra("email", intent.getStringExtra("email"))
+                putExtra("name", intent.getStringExtra("name"))
+
             }
             startActivity(intent)
         }
@@ -159,6 +163,9 @@ class FlightBookActivity : AppCompatActivity() {
                 putExtra("from", fromLocation)
                 putExtra("to", toLocation)
                 putExtra("firstName", firstNamec)
+                putExtra("email", intent.getStringExtra("email"))
+                putExtra("name", intent.getStringExtra("name"))
+
             }
             startActivity(intent)
         }
@@ -178,6 +185,8 @@ class FlightBookActivity : AppCompatActivity() {
                 putExtra("from", fromLocation)
                 putExtra("to", toLocation)
                 putExtra("firstName", firstNamee)
+                putExtra("name", intent.getStringExtra("name"))
+                putExtra("email", intent.getStringExtra("email"))
             }
             startActivity(intent)
         }
