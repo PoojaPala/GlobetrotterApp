@@ -10,6 +10,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -38,7 +39,7 @@ class BoardingPassActivity : AppCompatActivity() {
         val flightFromTextView = findViewById<TextView>(R.id.departureAirport1)
         val flightToTextView = findViewById<TextView>(R.id.arrivalAirport1)
         val gateNumberTextView = findViewById<TextView>(R.id.gatenumber)
-        val cardView = findViewById<CardView>(R.id.cardView1)
+        val cardView = findViewById<LinearLayout>(R.id.boardingPassLv)
 
         // Set values
         seatNumberTextView.text = seatNumber
