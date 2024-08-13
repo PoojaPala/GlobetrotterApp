@@ -5,8 +5,13 @@ import android.widget.Toast
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class SeatSelectionActivity : AppCompatActivity() {
 
@@ -186,14 +191,36 @@ class SeatSelectionActivity : AppCompatActivity() {
     }
 
      fun navigateToNextActivity(seatNumber: String) {
+         var databaseReference = FirebaseDatabase.getInstance().getReference().child("FlightsBooking")
+         val booking = FlightsBooking(firstName,
+             intent.getStringExtra("email").toString(), fromLocation, toLocation,seatNumber)
+         databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
+             override fun onDataChange(@NonNull snapshot: DataSnapshot) {
+                 // Example navigation to another activity
+                 val intent = Intent(baseContext, BoardingPassActivity::class.java).apply {
+                     putExtra("from", fromLocation)
+                     putExtra("to", toLocation)
+                     putExtra("firstName", firstName)
+                     putExtra("seatNumber",seatNumber)
+                     putExtra("email", intent.getStringExtra("email"))
+                     putExtra("name", intent.getStringExtra("name"))
+                 }
+                 intent.flags =
+                     Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                 startActivity(intent)
+                 finish()
+             }
 
-        val intent = Intent(this, BoardingPassActivity::class.java).apply {
-            putExtra("from", fromLocation)
-            putExtra("to", toLocation)
-            putExtra("firstName", firstName)
-            putExtra("seatNumber",seatNumber)
-            }
+             override fun onCancelled(@NonNull error: DatabaseError) {
+                 // if the data is not added or it is cancelled then
+                 // we are displaying a failure toast message.
+                 Toast.makeText(baseContext, "Fail to add data $error", Toast.LENGTH_SHORT)
+                     .show()
+             }
+         })
 
-            startActivity(intent)
+         databaseReference.push().setValue(booking)
+
+
     }
 }

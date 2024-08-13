@@ -33,9 +33,16 @@
         app:layout_constraintVertical_bias="1.0"
         app:shapeAppearanceOverlay="@style/RoundedTopCorners">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="399dp"
-            android:layout_height="477dp"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
             android:padding="16dp">
 
             <TextView
@@ -45,6 +52,7 @@
                 android:fontFamily="@font/abril_fatface"
                 android:text="Sign In"
                 android:textColor="#000000"
+                android:layout_margin="20dp"
                 android:textSize="44sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -59,16 +67,12 @@
                 android:layout_height="wrap_content"
                 android:hint="Enter Email"
                 android:padding="12dp"
+                android:layout_margin="10dp"
                 android:textColorHint="@color/textColorSecondary"
                 app:boxBackgroundMode="outline"
                 app:boxStrokeColor="@color/textColorPrimary"
                 app:hintTextColor="@color/textColorSecondary"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.287" />
+               />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editPass"
@@ -76,47 +80,46 @@
                 android:layout_height="wrap_content"
                 android:hint="Enter Password"
                 android:padding="12dp"
+                android:layout_margin="10dp"
                 android:inputType="textWebPassword"
                 android:textColorHint="@color/textColorSecondary"
                 app:boxBackgroundMode="outline"
                 app:boxStrokeColor="@color/textColorPrimary"
                 app:hintTextColor="@color/textColorSecondary"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.433" />
+               />
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="208dp"
                 android:layout_height="48dp"
                 android:backgroundTint="#7C9DB8"
+                android:layout_margin="10dp"
                 android:text="Sign IN"
                 android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.773" />
+               />
 
             <TextView
                 android:id="@+id/forgot_pass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:text="Forgot Password ?"
                 android:textColor="#922020"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.828"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.596" />
+              />
+
+            <TextView
+                android:id="@+id/signInText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="New User? Sign up"
+                android:textColor="@color/blue"
+                />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
 
     </com.google.android.material.card.MaterialCardView>
 

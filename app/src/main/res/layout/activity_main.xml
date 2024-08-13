@@ -39,19 +39,31 @@
             android:text="Book Now -->"
             android:textStyle="bold" />
 
+        <Button
+            android:id="@+id/MyBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="120dp"
+            android:layout_gravity="right"
+            android:background="#363434"
+            android:backgroundTint="#363434"
+            android:text="My Booking"
+            android:textStyle="bold" />
+
     </androidx.cardview.widget.CardView>
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <TextView
+        android:id="@+id/welcome"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:titleTextColor="@android:color/white" />
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/average"
+        android:text="To travel Is To Live..."
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:padding="10dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/featured"
@@ -65,7 +77,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.104" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <TextView
         android:id="@+id/dessert_list"

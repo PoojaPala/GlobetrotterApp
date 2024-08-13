@@ -41,6 +41,8 @@ class FlightDetailsActivity : AppCompatActivity() {
                 putExtra("from", fromLocation)
                 putExtra("to", toLocation)
                 putExtra("firstName", firstName)
+                putExtra("email", intent.getStringExtra("email"))
+                putExtra("name", intent.getStringExtra("name"))
             }
             startActivity(intent)
         }

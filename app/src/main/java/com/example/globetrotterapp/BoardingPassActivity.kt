@@ -1,13 +1,26 @@
 package com.example.globetrotterapp
 
 
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.net.Uri
 import android.os.Bundle
-import android.widget.Spinner
+import android.os.Environment
+import android.provider.MediaStore
+import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.textfield.TextInputEditText
+import androidx.cardview.widget.CardView
+import androidx.core.content.FileProvider
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+
 
 class BoardingPassActivity : AppCompatActivity() {
 
@@ -26,6 +39,7 @@ class BoardingPassActivity : AppCompatActivity() {
         val flightFromTextView = findViewById<TextView>(R.id.departureAirport1)
         val flightToTextView = findViewById<TextView>(R.id.arrivalAirport1)
         val gateNumberTextView = findViewById<TextView>(R.id.gatenumber)
+        val cardView = findViewById<LinearLayout>(R.id.boardingPassLv)
 
         // Set values
         seatNumberTextView.text = seatNumber
@@ -35,10 +49,51 @@ class BoardingPassActivity : AppCompatActivity() {
         gateNumberTextView.text = gateNumber
 
         // Set up click listener for the download button
-        val downloadButton = findViewById<Button>(R.id.book)
+        val downloadButton = findViewById<Button>(R.id.shareBtn)
         downloadButton.setOnClickListener {
-            showToast("Your boarding pass is downloaded")
+            shareBoardingPass(cardView)
         }
+
+        val mainButton = findViewById<Button>(R.id.BookingPage)
+        mainButton.setOnClickListener {
+            val intent = Intent(baseContext, MainActivity::class.java)
+            intent.flags =
+                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent.putExtra("email",getIntent().getStringExtra("email"))
+            intent.putExtra("name", getIntent().getStringExtra("name"))
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    fun shareBoardingPass(view: View){
+        val bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        view.draw(canvas)
+
+        val bytes = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
+        val path: String = MediaStore.Images.Media.insertImage(
+            contentResolver,
+            bitmap,
+            "Title",
+            null
+        )
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.putExtra(Intent.EXTRA_STREAM, Uri.parse(path))
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        intent.setType("image/*")
+        startActivity(intent)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(baseContext, MainActivity::class.java)
+        intent.flags =
+            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent.putExtra("email",getIntent().getStringExtra("email"))
+        intent.putExtra("name", getIntent().getStringExtra("name"))
+        startActivity(intent)
     }
 
     private fun showToast(message: String) {
